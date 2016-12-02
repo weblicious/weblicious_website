@@ -1,0 +1,177 @@
+@import "normalize";
+@import "compass";
+@import "susy";
+@import "variables";
+@import "mixins";
+
+@import "compass/css3";
+
+@include keyframes(bounce) {
+	0%, 20%, 50%, 80%, 100% {
+    @include transform(translateY(0));
+  }
+	40% {
+    @include transform(translateY(-30px));
+  }
+	60% {
+    @include transform(translateY(-15px));
+  }
+}
+
+
+body{
+  background:$white;
+  color:$darkGrey;
+  font-family: $mainFont;
+}
+h1,h2,h3,h4,h5,h6{
+  margin:0;
+
+}
+
+ .mainHeader{
+    position:fixed;
+    width:100%;
+     display:none;
+    z-index:100;
+    //background: red;
+  }
+
+.logo{
+  text-indent: -99999px;
+  display:block;
+  background: url(../images/logo-Weblicious.svg) center top no-repeat;
+  height:210px;
+  position:relative;
+  z-index: 1000;
+ 
+}
+h1{  
+  
+  margin: 0 auto;    
+  font-family: $headings, serif;
+  text-align: center;
+  font-size:4rem;
+  font-weight:400;
+  transition:all .3s ease-out; 
+  text-transform: uppercase;  
+  em{
+    display:block;
+    font-family: $subHeadings;
+    font-weight:400;
+    font-size:2rem;
+    text-transform: capitalize;
+    font-style: normal;
+     transition:all .3s ease-out; 
+  }
+   
+  &:after{
+    content:" ";
+    display:block;
+    background: $darkGrey;
+    width:70px;
+    height:5px;    
+    margin:4vh auto ;
+
+  }
+
+   @include susy-breakpoint($bpDesktop) {
+    font-size:7.5rem;
+    letter-spacing: -5px;
+    width:960px;
+    line-height:5rem;
+    em{
+      font-size:4rem;
+       letter-spacing: -2px;
+    }
+ 
+ }
+}
+
+.button{
+
+}
+
+.arrowDown{
+  @include animation(bounce 2s infinite);
+ position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  line-height:40px;
+  text-align: center;
+  border:1px solid $darkGrey;
+  border-radius:50%;
+  z-index:1500;  
+  span{
+    display:none;
+  }
+  
+}
+
+
+.weblicious{
+ 
+  .geometry{
+    position:absolute;
+    top:0;   
+  }
+  h1{
+    position:relative;
+    z-index:10;
+    top:2vh;
+
+    
+  }
+  .contactButton{
+    position:relative;
+    z-index:220;
+    display:block;
+    width:180px;
+    text-align:center;
+    margin:80px auto 50px auto;;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight:600;
+    color:white;
+    background:$darkGrey;
+    border:1px solid $darkGrey;
+    line-height:50px;
+      &:before{
+        content:" ";
+        display:block;
+        background:$white;
+        width:0px;
+        height:50px;
+        position:absolute;
+        transition:all .2s ease-out; 
+      }
+      &:after{
+        content:"Get In Touch";
+         width:180px;
+        position:absolute;
+        top:0;
+        left:0;
+         transition:all .5s ease-out; 
+         color:$white;
+      }
+      &:hover{
+        &:before{        
+          width:180px;    
+         
+        }
+        &:after{
+          color:$darkGrey;
+        }
+    }
+
+  }
+ @include susy-breakpoint($bpDesktop) {
+
+
+
+ }
+
+}

@@ -1,0 +1,23 @@
+{
+  "name": "gulp-project",
+  "description": "Project Gulp",
+  "main": "index.js",
+  "authors": [
+    "Spawny"
+  ],
+  "license": "ISC",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.0",
+    "compass-mixins": "^1.0.2"
+  }
+}
