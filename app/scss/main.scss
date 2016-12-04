@@ -26,24 +26,38 @@ body{
 }
 h1,h2,h3,h4,h5,h6{
   margin:0;
+  font-family:$headings;
 
 }
-
+#fp-nav{
+  display:none;
+  @include susy-breakpoint($bpDesktop) {
+   
+      display: block;
+   
+  }
+}
  .mainHeader{
     position:fixed;
     width:100%;
      display:none;
     z-index:100;
-    //background: red;
+    
   }
 
 .logo{
+  transition:all .3s ease-out; 
   text-indent: -99999px;
   display:block;
-  background: url(../images/logo-Weblicious.svg) center top no-repeat;
-  height:210px;
+  background: url(../images/logo-weblicious.svg) center top no-repeat;
+ height:100px;
+ 
   position:relative;
   z-index: 1000;
+      @include susy-breakpoint($bpTablet) {
+      height:210px;
+
+      }
  
 }
 h1{  
@@ -51,8 +65,10 @@ h1{
   margin: 0 auto;    
   font-family: $headings, serif;
   text-align: center;
-  font-size:4rem;
-  font-weight:400;
+  font-size:3.7rem;
+  font-weight:500;
+  letter-spacing: -3px;
+  line-height:3rem;
   transition:all .3s ease-out; 
   text-transform: uppercase;  
   em{
@@ -72,30 +88,72 @@ h1{
     width:70px;
     height:5px;    
     margin:4vh auto ;
+    
 
   }
 
-   @include susy-breakpoint($bpDesktop) {
-    font-size:7.5rem;
+ 
+
+  @include susy-breakpoint($bpTablet) {
+    margin:5vh auto 0 auto;   
+    font-size:6.5rem;
     letter-spacing: -5px;
-    width:960px;
-    line-height:5rem;
-    em{
+     line-height:5rem;
+
+     em{
       font-size:4rem;
        letter-spacing: -2px;
     }
+  }
+
+    @include susy-breakpoint($bpDesktop) {
+     margin:5vh auto 0 auto;    
+    width:960px;
+
+    
  
  }
 }
 
-.button{
+h2{
+  color:$white;
+  text-transform:uppercase;
+  em{
+    font-style:normal;
+    font-weight:200;
+    &:before{
+      content:"[";
+    }
+    &:after{
+      content: "]";
+    }
+  }
+  @include susy-breakpoint($bpTablet) {
+    font-size:3rem;
 
+      
+  }
+  
+}
+p{
+  font-weight: 100;
+  font-size:1rem;
+  @include susy-breakpoint($bpTablet) {
+    font-size:1.3rem;
+  }
+    @include susy-breakpoint($bpDesktop) {
+        font-size:1.2rem;
+    }
+}
+
+.button{
+cursor:pointer;
 }
 
 .arrowDown{
   @include animation(bounce 2s infinite);
  position: fixed;
-  bottom: 50px;
+  bottom: 10px;
   left: 50%;
   margin-left:-20px;
   width: 40px;
@@ -105,10 +163,16 @@ h1{
   border:1px solid $darkGrey;
   border-radius:50%;
   z-index:1500;  
+
   span{
     display:none;
   }
-  
+ @include susy-breakpoint($bpTablet) {
+ bottom: 25px;
+ }  
+  @include susy-breakpoint($bpHugeDesk) {
+ bottom: 50px;
+ }  
 }
 
 
@@ -117,25 +181,30 @@ h1{
   .geometry{
     position:absolute;
     top:0;   
+    display:none;
+    @include susy-breakpoint($bpDesktop) {
+      display:block;
+    }
   }
   h1{
     position:relative;
     z-index:10;
-    top:2vh;
+    top:1vh;
 
     
   }
   .contactButton{
+    cursor:pointer;
     position:relative;
     z-index:220;
     display:block;
     width:180px;
     text-align:center;
-    margin:80px auto 50px auto;;
+    margin:50px auto 50px auto;;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight:600;
-    color:white;
+    font-weight:400;
+    color:$white;
     background:$darkGrey;
     border:1px solid $darkGrey;
     line-height:50px;
@@ -156,6 +225,7 @@ h1{
         left:0;
          transition:all .5s ease-out; 
          color:$white;
+          font-weight:400;
       }
       &:hover{
         &:before{        
@@ -164,14 +234,122 @@ h1{
         }
         &:after{
           color:$darkGrey;
+          
         }
     }
 
   }
- @include susy-breakpoint($bpDesktop) {
+
+
+}
 
 
 
- }
+
+.section2{
+  
+  overflow:hidden;
+   border-bottom:8px solid #4F1633;   
+   position:relative;
+   .wrapper{
+     @include span(11 of 12);
+        z-index:500;
+        position:relative;
+        padding:5vh 0 0 5vw;
+     
+   p{
+     color:$white;
+   }  
+
+   
+    @include susy-breakpoint($bpTablet) {
+      padding:7vh 0 0 5vw;
+    }
+     @include susy-breakpoint($bpDesktop) {
+      @include span(7 of 12);
+           padding:15vh 0 0 5vw;
+    }
+    @include susy-breakpoint($bpWideDesk) {
+       @include span(5 of 12);
+           padding:15vh 0 0 5vw;
+    }
+
+ 
+     @include susy-breakpoint($bpHugeDesk) {
+       @include span(4 of 12);
+
+     }
+   }
+
+.tigascene, .layer {   
+      
+    padding: 0;
+    margin: 0;
+    text-indent:-9999px;
+   
+}
+  ul{
+
+   .layer{
+
+    height: 100vh;
+    width: 100vw;
+   }
+   .img1{     
+    
+    width: 100vw;
+    height:100vh;
+    background:url(../images/badass-website-bg.jpg) no-repeat -25vw 0vh;
+    background-size: cover;
+
+   
+      @include susy-breakpoint($bpTablet) {
+        background-position:-40vw 0 ; 
+
+      }
+   @include susy-breakpoint($bpDesktop) {
+    background-position:0 center ; 
+
+    }
+
+     @include susy-breakpoint($bpWideDesk) {
+           background-position:center center ; 
+
+    } 
+
+    
+
+   }
+   .img2{
+     
+    width: 110vw;
+    height:100vh;
+    background:url(../images/badass-website-tiga2.png) 60% 35vh  no-repeat;
+    background-size: cover;
+   
+     @include susy-breakpoint($bpTablet) {
+        background-position:-90vw 30vh ; 
+
+      }
+
+     @include susy-breakpoint($bpDesktop) {
+    background-position:-15vw 30vh ; 
+
+    }     
+        @include susy-breakpoint($bpWideDesk) {
+           background-position:-5vw 10vh ; 
+
+    } 
+   }
+   .img3{
+   
+     
+    width: 100vw;
+    height:100vh;
+    background:url(../images/badass-website-lines.png) 100% 0 no-repeat;
+    background-size: cover;
+
+   }
+  }
 
 }

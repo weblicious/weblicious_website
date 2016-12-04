@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
         sectionsColor: ['#ffffff', '#f4f5f7', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C'],
-
+		anchors:['firstPage', 'secondPage'],
         // continuousVertical: true,
         // loopTop: false,
         // loopBottom: true,
@@ -112,4 +112,11 @@ $(document).ready(function() {
 				renderer.render( scene, camera );
 			}
             //three
+
+//parallax
+ var tiga = document.getElementById('scene');
+ var tigarallax = new Parallax(tiga);
+
+////parallax
+
 });

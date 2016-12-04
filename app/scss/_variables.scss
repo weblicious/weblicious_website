@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600|Reem+Kufi');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,600');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,500|Reem+Kufi');
 
 
-$mainFont: "Open Sans",sans-serif;
-$headings:  "Reem Kufi" ,sans-serif;
+$mainFont: "Roboto",sans-serif;
+$headings:  "Raleway" ,sans-serif;
 $subHeadings:  "Raleway" ,sans-serif;
-$bpDesktop: 1024px;
+$bpTablet: 639px;
+$bpDesktop:800px;
+$bpWideDesk: 1279px;
+$bpHugeDesk: 1920px;
 
 
 $white :   #ffffff;
