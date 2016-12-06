@@ -20,7 +20,7 @@ $(document).ready(function() {
      }
 
 //three
-  		var mouseX = 0, mouseY = 0,
+  			var mouseX = 0, mouseY = 0,
 			windowHalfX = window.innerWidth / 50,
 			windowHalfY = window.innerHeight / 50,
 			SEPARATION = 200,
