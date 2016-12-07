@@ -19,6 +19,7 @@
 }
 
 
+
 body{
   background:$white;
   color:$darkGrey;
@@ -47,13 +48,20 @@ h1,h2,h3,h4,h5,h6{
 
 .logo{
   transition:all .3s ease-out; 
-  text-indent: -99999px;
+  //text-indent: -99999px;
   display:block;
-  background: url(../images/logo-weblicious.svg) center top no-repeat;
+text-align: center;
+ // background: url(../images/logo-weblicious-lines-2.svg) center top no-repeat;
+
  height:100px;
  
   position:relative;
-  z-index: 1000;
+  z-index: 1200;
+
+ svg{
+   width:500px;
+   
+ }
       @include susy-breakpoint($bpTablet) {
       height:210px;
 
@@ -162,7 +170,8 @@ cursor:pointer;
   text-align: center;
   border:1px solid $darkGrey;
   border-radius:50%;
-  z-index:1500;  
+  z-index:1000;  
+  color:$darkGrey;
 
   span{
     display:none;
@@ -177,7 +186,21 @@ cursor:pointer;
 
 
 .weblicious{
- 
+  .overlayer{
+   content:"";
+   background-color:#222222;
+   width:100%;
+   height:100vh;
+   display:block;
+   position:absolute;
+   top:0;
+   left:0;
+   z-index:1000;
+   
+
+
+
+ }
   .geometry{
     position:absolute;
     top:0;   

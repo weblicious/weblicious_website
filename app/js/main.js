@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('#fullpage').fullpage({
         sectionsColor: ['#ffffff', '#f4f5f7', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C'],
 		anchors:['firstPage', 'secondPage'],
@@ -10,14 +11,32 @@ $(document).ready(function() {
         navigationTooltips: ['Home', 'Les chiffres', 'Analysis', 'Your e-commerce partner', 'Our services', 'Contractor to contractor', 'References'],
         // css3: true
     });
+	$('h1').hide();
+	var logo = $('.logo').find('svg').find('path');
+	$('.logo').css("top","30vh");
+	TweenMax.staggerFrom(logo, .5, {drawSVG:0}, 0.1,moveLogo);
+
+	var weblicious = $('.weblicious');
+	
+	var overlayer = document.createElement( "div" );
+	weblicious.append(overlayer);
+	$(overlayer).addClass('overlayer');
 
 
 
+	function moveLogo(){
+		
+		TweenMax.to($('.logo'), 1, {top:0,onComplete:placeAll});
+	} 
 
-    function toggleMenu(){
+  	function placeAll(){
+		  $("#logo").find('svg').find('.st0').css("display","inline");
+		$("#logo").find('svg').find('#Layer_2').css("display","none");
+		  TweenMax.to($(overlayer), 2.5, {opacity:0});
+		  $('h1').show();
+	  }
+  
 
- 
-     }
 
 //three
   			var mouseX = 0, mouseY = 0,

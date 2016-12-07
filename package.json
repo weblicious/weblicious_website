@@ -26,5 +26,8 @@
     "gulp-useref": "^3.1.2",
     "handlebars": "^4.0.5",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "gsap": "^1.19.0"
   }
 }
