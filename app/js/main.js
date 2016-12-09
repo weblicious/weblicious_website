@@ -1,5 +1,7 @@
 $(document).ready(function() {
-
+	$(".section").hide();
+	$(".weblicious").show();
+	function initFullPage(){
     $('#fullpage').fullpage({
         sectionsColor: ['#ffffff', '#f4f5f7', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C', '#f4f5f7C'],
 		anchors:['firstPage', 'secondPage'],
@@ -11,29 +13,28 @@ $(document).ready(function() {
         navigationTooltips: ['Home', 'Les chiffres', 'Analysis', 'Your e-commerce partner', 'Our services', 'Contractor to contractor', 'References'],
         // css3: true
     });
-	$('h1').hide();
+	}
+	$('.logo').addClass('animation');
 	var logo = $('.logo').find('svg').find('path');
-	$('.logo').css("top","30vh");
+	
 	TweenMax.staggerFrom(logo, .5, {drawSVG:0}, 0.1,moveLogo);
 
-	var weblicious = $('.weblicious');
+
 	
-	var overlayer = document.createElement( "div" );
-	weblicious.append(overlayer);
-	$(overlayer).addClass('overlayer');
-
-
-
 	function moveLogo(){
 		
-		TweenMax.to($('.logo'), 1, {top:0,onComplete:placeAll});
+		TweenMax.to($('.logo'), 2, {top:0,onComplete:placeAll});
 	} 
 
   	function placeAll(){
-		  $("#logo").find('svg').find('.st0').css("display","inline");
+		
+		  TweenMax.to($('.overlayer'), .5, {opacity:0});
+		    $("#logo").find('svg').find('.st0').css("display","inline");
 		$("#logo").find('svg').find('#Layer_2').css("display","none");
-		  TweenMax.to($(overlayer), 2.5, {opacity:0});
-		  $('h1').show();
+		$(".section").show();
+		 init();
+			animate();
+			initFullPage();
 	  }
   
 
@@ -46,8 +47,8 @@ $(document).ready(function() {
 			AMOUNTX = 10,
 			AMOUNTY = 10,
 			camera, scene, renderer;
-		    init();
-			animate();
+		    // init();
+			// animate();
 			function init() {
 				var container, separation = 100, amountX = 50, amountY = 50,
 				particles, particle, parent;
