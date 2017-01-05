@@ -52,11 +52,14 @@ h1,h2,h3,h4,h5,h6{
 .logo{
 
   transition:all .3s ease-out; 
-  //text-indent: -99999px;
+  text-indent: -99999px;
   display:block;
 text-align: center;
-top:30vh;
- // background: url(../images/logo-weblicious-lines-2.svg) center top no-repeat;
+//top:30vh;
+
+
+  background: url(../images/logo-weblicious-lines.svg) center top no-repeat;
+top:0px;
 
  height:100px;
  
